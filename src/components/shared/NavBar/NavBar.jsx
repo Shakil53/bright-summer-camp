@@ -2,10 +2,11 @@ import { Fragment } from 'react';
 import { Disclosure, Menu, Transition } from '@headlessui/react';
 import { Bars3Icon, BellIcon, XMarkIcon } from '@heroicons/react/24/outline';
 import logoImg from '../../../assets/images/logo.png';
+import { Link } from 'react-router-dom';
 
 
 const navigation = [
-    { name: 'Home', href: '#', current: true },
+    { name: 'Home', href: '/', current: true },
     { name: 'Courses', href: '#', current: false },
     { name: 'Projects', href: '#', current: false },
     { name: 'Instractors', href: '#', current: false },
