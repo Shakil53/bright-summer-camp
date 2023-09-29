@@ -2,7 +2,8 @@ import { Fragment } from 'react';
 import { Disclosure, Menu, Transition } from '@headlessui/react';
 import { Bars3Icon, BellIcon, XMarkIcon } from '@heroicons/react/24/outline';
 import logoImg from '../../../assets/images/logo.png';
-import { Link } from 'react-router-dom';
+import { motion } from 'framer-motion';
+
 
 
 const navigation = [
@@ -19,6 +20,7 @@ function classNames(...classes) {
 
 export default function NavBar() {
     return (
+
         <Disclosure as="nav" className="bg-gradient-to-r from-violet-600 to-indigo-200">
             {({ open }) => (
                 <>
@@ -37,13 +39,13 @@ export default function NavBar() {
                                 </Disclosure.Button>
                             </div>
                             <div className="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
-                                <div className="flex flex-shrink-0 items-center">
+                                <motion.div initial={{ x: -150 }} animate={{ x: 0, y: -3, scale: 1.2 }} className="flex flex-shrink-0 items-center">
                                     <img
                                         className="w-10"
                                         src={logoImg}
                                         alt="Logo-summerCamp"
                                     />
-                                </div>
+                                </motion.div>
                                 <div className="hidden sm:ml-6 sm:block">
                                     <div className="flex space-x-4">
                                         {navigation.map((item) => (
@@ -156,5 +158,7 @@ export default function NavBar() {
                 </>
             )}
         </Disclosure>
+
+
     )
 }
