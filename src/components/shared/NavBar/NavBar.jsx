@@ -3,16 +3,18 @@ import { Disclosure, Menu, Transition } from '@headlessui/react';
 import { Bars3Icon, BellIcon, XMarkIcon } from '@heroicons/react/24/outline';
 import logoImg from '../../../assets/images/logo.png';
 import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
 
 
 
-const navigation = [
-    { name: 'Home', href: '/', current: true },
-    { name: 'Courses', href: '#', current: false },
-    { name: 'Projects', href: '#', current: false },
-    { name: 'Instractors', href: '#', current: false },
-    { name: 'Gallery', href: '#', current: false },
-]
+// const navigation = [
+
+// { name: 'Home', href: '/', current: true },
+// { name: 'Courses', href: '#', current: false },
+// { name: 'Projects', href: '#', current: false },
+// { name: 'Instractors', href: '#', current: false },
+// { name: 'Gallery', href: '#', current: false },
+// ]
 
 function classNames(...classes) {
     return classes.filter(Boolean).join(' ')
@@ -39,7 +41,7 @@ export default function NavBar() {
                                 </Disclosure.Button>
                             </div>
                             <div className="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
-                                <motion.div initial={{ x: -150 }} animate={{ x: 0, y: -3, scale: 1.2 }} className="flex flex-shrink-0 items-center">
+                                <motion.div initial={{ x: -150 }} animate={{ x: 0, y: -3, scale: 1.2 }} transition={{ duration: .5, type: 'spring' }} className="flex flex-shrink-0 items-center">
                                     <img
                                         className="w-10"
                                         src={logoImg}
@@ -47,9 +49,16 @@ export default function NavBar() {
                                     />
                                 </motion.div>
                                 <div className="hidden sm:ml-6 sm:block">
-                                    <div className="flex space-x-4">
-                                        {navigation.map((item) => (
+                                    <div className="flex space-x-3">
+
+                                        <Link className="btn btn-sm btn-outline text-gray-100 mt-1" to='/'>Home</Link>
+                                        <Link className="btn btn-sm btn-outline text-gray-100 mt-1" to='/Courses'>Courses</Link>
+                                        <Link className="btn btn-sm btn-outline text-gray-100 mt-1" to='/Projects'>Projects</Link>
+                                        <Link className="btn btn-sm btn-outline text-gray-100 mt-1" to='/Instractors'>Instractors</Link>
+                                        <Link className="btn btn-sm btn-outline text-gray-100 mt-1" to='/Gallery'>Gallery</Link>
+                                        {/* {navigation.map((item) => (
                                             <a
+
                                                 key={item.name}
                                                 href={item.href}
                                                 className={classNames(
@@ -60,7 +69,7 @@ export default function NavBar() {
                                             >
                                                 {item.name}
                                             </a>
-                                        ))}
+                                        ))} */}
                                     </div>
                                 </div>
                             </div>
@@ -138,8 +147,16 @@ export default function NavBar() {
                     </div>
 
                     <Disclosure.Panel className="sm:hidden">
-                        <div className="space-y-1 px-2 pb-3 pt-2">
-                            {navigation.map((item) => (
+                        <motion.div className="space-y-2 px-2 pb-3 pt-2 flex flex-col w-44"
+                            whileHover={{ scale: 1.09, originX: 0 }}
+                            transition={{ type: 'spring', stiffness: 200 }}
+                        >
+
+                            <Link className="btn btn-sm btn-outline text-gray-100 mt-1" to='/Courses'>Courses</Link>
+                            <Link className="btn btn-sm btn-outline text-gray-100 mt-1" to='/Projects'>Projects</Link>
+                            <Link className="btn btn-sm btn-outline text-gray-100 mt-1" to='/Instractors'>Instractors</Link>
+                            <Link className="btn btn-sm btn-outline text-gray-100 mt-1" to='/Gallery'>Gallery</Link>
+                            {/* {navigation.map((item) => (
                                 <Disclosure.Button
                                     key={item.name}
                                     as="a"
@@ -152,8 +169,8 @@ export default function NavBar() {
                                 >
                                     {item.name}
                                 </Disclosure.Button>
-                            ))}
-                        </div>
+                            ))} */}
+                        </motion.div>
                     </Disclosure.Panel>
                 </>
             )}

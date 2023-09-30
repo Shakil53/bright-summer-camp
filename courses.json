@@ -1,0 +1,98 @@
+[
+    {
+        "name": "Archary",
+        "details": "Praesent id massa id nisl venenatis lacinia. Aenean sit amet justo. Morbi ut odio.",
+        "rating": 4.2,
+        "price": 36,
+        "img": "https://i.ibb.co/kB0sKbw/6517abfb5afd4.jpg",
+        "icon": "http://dummyimage.com/227x100.png/ff4444/ffffff"
+    },
+    {
+        "name": "Badminton",
+        "details": "In hac habitasse platea dictumst. Etiam faucibus cursus urna. Ut tellus.",
+        "rating": 5.5,
+        "price": 26,
+        "img": "https://i.ibb.co/Dtcz7n9/badminton.jpg",
+        "icon": "http://dummyimage.com/220x100.png/cc0000/ffffff"
+    },
+    {
+        "name": "Chess",
+        "details": "In hac habitasse platea dictumst. Etiam faucibus cursus urna thein Ut tellus.",
+        "rating": 6.9,
+        "price": 13,
+        "img": "https://i.ibb.co/Ky7V5TK/chess.jpg",
+        "icon": "http://dummyimage.com/140x100.png/ff4444/ffffff"
+    },
+    {
+        "name": "Skating",
+        "details": "In quis justo. Maecenas rhoncus aliquam lacus. Morbi quis tortor ultrices aliquet.",
+        "rating": 4.3,
+        "price": 69,
+        "img": "https://i.ibb.co/VSRFYZZ/Fitz-In-the-Park.png",
+        "icon": "http://dummyimage.com/109x100.png/5fa2dd/ffffff"
+    },
+    {
+        "name": "Dancing",
+        "details": "Aenean lectus. Pellentesque eget nunc. Donec quis orci eget orci vehicula condimentum",
+        "rating": 5.1,
+        "price": 34,
+        "img": "https://i.ibb.co/3Fqn9yn/vecteezy-dancing-ballerina-girl-cartoon-colored-clipart-7066644.jpg",
+        "icon": "http://dummyimage.com/155x100.png/cc0000/ffffff"
+    },
+    {
+        "name": "Football",
+        "details": "In hac habitasse platea dictumst. Etiam faucibus cursus urna. Ut tellus.",
+        "rating": 6.6,
+        "price": 94,
+        "img": "https://i.ibb.co/bdhgwd5/reshot-illustration-playing-football-with-dad-YP6-A83-C972.png",
+        "icon": "http://dummyimage.com/163x100.png/dddddd/000000"
+    },
+    {
+        "name": "Guitar",
+        "details": "Morbi porttitor lorem id ligula. Suspendisse ornare consequat lectus. In est risus",
+        "rating": 5.7,
+        "price": 45,
+        "img": "https://i.ibb.co/m65YYZ7/fun-3d-cartoon-teenage-boy.jpg",
+        "icon": "http://dummyimage.com/170x100.png/ff4444/ffffff"
+    },
+    {
+        "name": "Magic",
+        "details": "Quisque porta volutpat erat. Quisque erat eros, viverra eget",
+        "rating": 4.2,
+        "price": 19,
+        "img": "https://i.ibb.co/7kRFC9k/show-2954907-640.jpg",
+        "icon": "http://dummyimage.com/105x100.png/cc0000/ffffff"
+    },
+    {
+        "name": "Pilates",
+        "details": "Vestibulum quam sapien, varius ut, blandit non, interdum in, ante. Vestibulumipsum",
+        "rating": 5.1,
+        "price": 21,
+        "img": "https://i.ibb.co/55kFJyM/pilates.jpg",
+        "icon": "http://dummyimage.com/160x100.png/cc0000/ffffff"
+    },
+    {
+        "name": "Swimming",
+        "details": "Aliquam quis turpis eget elit sodales scelerisque. Mauris sit amet eros",
+        "rating": 1.3,
+        "price": 4,
+        "img": "https://i.ibb.co/CVjXSMf/swim.png",
+        "icon": "http://dummyimage.com/150x100.png/dddddd/000000"
+    },
+    {
+        "name": "Tennis",
+        "details": "Pellentesque at nulla. Suspendisse potenti. Cras in purus eu magna vulputate luctus",
+        "rating": 6.9,
+        "price": 39,
+        "img": "https://i.ibb.co/Pxw8Vxw/tennis.jpg",
+        "icon": "http://dummyimage.com/150x100.png/5fa2dd/ffffff"
+    },
+    {
+        "name": "Volleball",
+        "details": "Curabitur gravida nisi at nibh. In hac habitasse platea dictumst. Aliquam augue quam",
+        "rating": 2.7,
+        "price": 46,
+        "img": "https://i.ibb.co/4SMWY3G/volleyball.jpg",
+        "icon": "http://dummyimage.com/209x100.png/dddddd/000000"
+    }
+]

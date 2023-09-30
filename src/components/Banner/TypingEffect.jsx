@@ -15,7 +15,7 @@ const TypingEffect = () => {
                 cursorRenderer={cursor => <h1>{cursor}</h1>}
                 displayTextRenderer={(text, i) => {
                     return (
-                        <p>
+                        <p className='hidden md:inline '>
                             {text.split('').map((char, i) => {
                                 const key = `${i}`;
                                 return (
