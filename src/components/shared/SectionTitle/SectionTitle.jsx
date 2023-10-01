@@ -18,7 +18,7 @@ const SectionTitle = ({ heading, subHeading }) => {
             }}
             // 
             className="ml-36 md:ml-80 lg:ml-[650px] m-8">
-            <h2 className="card-title text-xl uppercase font-[mooli]">{heading}</h2>
+            <h2 className="card-title text-2xl uppercase font-[mooli]">{heading}</h2>
             <p className="font-[mooli] text-sm">{subHeading}</p>
         </motion.div>
     );
