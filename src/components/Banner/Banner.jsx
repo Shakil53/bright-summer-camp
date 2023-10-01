@@ -9,7 +9,7 @@ const Banner = () => {
         <div className="hero md:min-h-[450px] md:h-[550px]" style={{ backgroundImage: `url(${bannerImg})` }}>
             <div className="hero-overlay"></div>
             <div className="hero-content text-center text-neutral-content">
-                <motion.div animate={{ x: -80 }} transition={{ duration: .4, type: 'spring' }} className="w-full text-left ml-16">
+                <motion.div animate={{ x: -80 }} transition={{ duration: .4, type: 'spring', stiffness: 80 }} className="w-full text-left ml-16">
                     <h1 className="mb-5 font-[mooli] text-xl md:text-5xl font-bold opacity-90">Wellcome to <br></br>Bright<span className='text-orange-400'> Summer Camp</span></h1>
                     {/* <p className="mb-5 font-[lato]">A Summer of Learning and Light.Where Knowledge Shines Bright</p> */}
                     <div animate={{ fontSize: 120 }} className="mb-5 font-[lato]">A Summer of Learning and Light. <TypingEffect></TypingEffect></div>
