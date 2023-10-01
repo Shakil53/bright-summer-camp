@@ -6,7 +6,8 @@ import {
   createBrowserRouter,
   RouterProvider,
 } from "react-router-dom";
-import { router } from './LayOut/Routes.jsx';
+import { router } from './Router/Route.jsx';
+
 
 
 ReactDOM.createRoot(document.getElementById('root')).render(

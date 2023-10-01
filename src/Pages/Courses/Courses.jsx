@@ -9,6 +9,7 @@ import SideBar from "./SideBar";
 
 
 
+
 const Courses = () => {
 
     const [courses, setCourse] = useState([])
@@ -32,20 +33,35 @@ const Courses = () => {
             ></SectionTitle>
             <section className="flex flex-row-reverse mr-8">
 
-                <div className="grid md:grid-cols-3 gap-4 w-2/3 m-auto mt-10">
+                <motion.div
+                    initial={{
+                        opacity: 0,
+                        x: 0
+                    }}
+                    animate={{
+                        opacity: 1,
+                        y: 15,
+                        transition: {
+                            type: 'spring',
+                            stiffness: 30
+                        }
+
+                    }}
+                    className="grid md:grid-cols-3 gap-4 w-2/3 m-auto mt-10">
                     {
                         courses.map(course => <CoursesCard
                             key={course._id}
                             course={course}
                         ></CoursesCard>)
                     }
-                </div>
+                </motion.div>
 
                 {/* side navigation bar */}
 
                 <SideBar></SideBar>
 
             </section >
+
         </>
     );
 
