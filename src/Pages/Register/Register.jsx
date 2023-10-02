@@ -4,6 +4,12 @@ import regImg2 from '../../assets/images/login/newart.png';
 import SectionTitle from '../../components/shared/SectionTitle/SectionTitle';
 import Footer from '../../components/shared/Footer/Footer';
 import { Link } from 'react-router-dom';
+import { useContext } from 'react';
+import { AuthContext } from '../../Providers/AuthProvider';
+
+
+
+
 
 
 const { Option } = Select;
@@ -40,9 +46,22 @@ const tailFormItemLayout = {
     },
 };
 const Register = () => {
+
+    const { createUser } = useContext(AuthContext);
+
     const [form] = Form.useForm();
     const onFinish = (values) => {
-        console.log('Received values of form: ', values);
+        // console.log('Received values of form: ', values);
+
+        createUser(form.email, form.confirm)
+            .then(result => {
+                const user = result.user;
+                // console.log(user);
+
+            })
+            .catch(error => {
+                console.log(error)
+            })
     };
     const prefixSelector = (
         <Form.Item name="countryCode" noStyle>
@@ -53,7 +72,7 @@ const Register = () => {
             >
                 <Option value="86">+86</Option>
                 <Option value="87">+87</Option>
-                <Option value="87">+880</Option>
+                <Option value="88">+880</Option>
             </Select>
         </Form.Item>
     );
