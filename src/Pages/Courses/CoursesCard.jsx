@@ -16,6 +16,7 @@ const CoursesCard = ({ course }) => {
     // console.log(course.details)
     const { name, img, price, details, _id, rating } = course;
     return (
+
         <div className="card card-compact bg-base-100 shadow-xl">
             <figure><img className='h-[180px] rounded-md' src={img} alt="course name" /></figure>
             <div className="card-body">
@@ -29,6 +30,7 @@ const CoursesCard = ({ course }) => {
                 </div>
             </div>
         </div>
+
     );
 };
 

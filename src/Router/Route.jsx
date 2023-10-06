@@ -39,7 +39,8 @@ export const router = createBrowserRouter([
             },
             {
                 path: 'enrollment/:id',
-                element: <EnrollMent></EnrollMent>
+                element: <EnrollMent></EnrollMent>,
+                loader: ({ params }) => fetch(`http://localhost:5000/courses/${params.id}`)
             },
             {
                 path: 'project',
