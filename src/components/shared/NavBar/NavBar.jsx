@@ -1,9 +1,11 @@
-import { Fragment } from 'react';
+import { Fragment, useContext } from 'react';
 import { Disclosure, Menu, Transition } from '@headlessui/react';
 import { Bars3Icon, BellIcon, XMarkIcon } from '@heroicons/react/24/outline';
 import logoImg from '../../../assets/images/logo.png';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../../../Providers/AuthProvider';
+import Swal from 'sweetalert2';
 
 
 
@@ -21,6 +23,28 @@ function classNames(...classes) {
 }
 
 export default function NavBar() {
+    const { user, loggedOut } = useContext(AuthContext)
+
+
+    //handle signOut
+    const handleSignOut = () => {
+        loggedOut()
+            .then(() => {
+                Swal.fire({
+                    position: 'top-end',
+                    icon: 'warning',
+                    title: 'logged out successfully',
+                    showConfirmButton: false,
+                    timer: 1500
+                })
+
+            })
+            .catch(error => {
+                console.log(error)
+            })
+
+    }
+
     return (
 
         <Disclosure as="nav" className="bg-gradient-to-r from-violet-600 to-indigo-200">
@@ -54,9 +78,9 @@ export default function NavBar() {
 
                                         <Link className="btn btn-sm btn-outline text-gray-100 mt-1" to='/'>Home</Link>
                                         <Link className="btn btn-sm btn-outline text-gray-100 mt-1" to='/Courses'>Courses</Link>
-                                        <Link className="btn btn-sm btn-outline text-gray-100 mt-1" to='/Projects'>Projects</Link>
-                                        <Link className="btn btn-sm btn-outline text-gray-100 mt-1" to='/Instractors'>Instractors</Link>
-                                        <Link className="btn btn-sm btn-outline text-gray-100 mt-1" to='/Gallery'>Gallery</Link>
+                                        <Link className="btn btn-sm btn-outline text-gray-100 mt-1" to='/project'>Projects</Link>
+                                        <Link className="btn btn-sm btn-outline text-gray-100 mt-1" to='/instractors'>Instractors</Link>
+
                                         {/* {navigation.map((item) => (
                                             <a
 
@@ -75,8 +99,16 @@ export default function NavBar() {
                                 </div>
                             </div>
                             <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
-                                <Link className="btn btn-sm btn-outline bg-[#42d8bf] text-gray-100 mr-3" to='/register'>Register</Link>
-                                <Link className="btn btn-sm btn-outline bg-[#42d8bf]  text-gray-100 " to='/login'>Login</Link>
+
+                                {
+
+                                    user ? <button onClick={handleSignOut} className="btn btn-sm btn-outline bg-[#42d8bf] text-gray-100 mr-3">Logout</button> :
+                                        <>
+                                            <Link className="btn btn-sm btn-outline bg-[#42d8bf] text-gray-100 mr-3" to='/register'>Register</Link>
+                                            <Link className="btn btn-sm btn-outline bg-[#42d8bf]  text-gray-100 " to='/login'>Login</Link>
+                                        </>
+                                }
+
                                 {/* <button
                                     type="button"
                                     className="relative rounded-full bg-gray-800 p-1 text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800"

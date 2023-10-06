@@ -3,7 +3,11 @@ import Footer from '../../components/shared/Footer/Footer';
 import SectionTitle from '../../components/shared/SectionTitle/SectionTitle';
 import logImg from '../../assets/images/login/allurawomen.png';
 import logImg2 from '../../assets/images/login/SquigglesColorful.png';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import { useContext } from 'react';
+import { AuthContext } from '../../Providers/AuthProvider';
+import Swal from 'sweetalert2';
+
 
 
 
@@ -46,9 +50,21 @@ const tailFormItemLayout = {
 };
 
 const Login = () => {
+    const nagivate = useNavigate()
+    const { signInUser } = useContext(AuthContext);
     const [form] = Form.useForm();
     const onFinish = (values) => {
-        console.log('Received values of form: ', values);
+        const { email, password } = values;
+        signInUser(email, password)
+        Swal.fire({
+            position: 'top-end',
+            icon: 'success',
+            title: 'login Successfully',
+            showConfirmButton: false,
+            timer: 1500
+        })
+        nagivate('/')
+
     };
     const prefixSelector = (
         <Form.Item name="countryCode" noStyle>

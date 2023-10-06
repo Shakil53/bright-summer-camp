@@ -8,8 +8,6 @@ import SideBar from "./SideBar";
 
 
 
-
-
 const Courses = () => {
 
     const [courses, setCourse] = useState([])
@@ -23,6 +21,9 @@ const Courses = () => {
     })
         .then(res => res.json())
         .then(data => setCourse(data))
+
+
+
 
 
 
@@ -52,7 +53,10 @@ const Courses = () => {
                         courses.map(course => <CoursesCard
                             key={course._id}
                             course={course}
-                        ></CoursesCard>)
+
+                        >
+
+                        </CoursesCard>)
                     }
                 </motion.div>
 

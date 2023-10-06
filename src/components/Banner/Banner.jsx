@@ -1,5 +1,5 @@
 import React from 'react';
-import bannerImg from '../../assets/images/summer-camp-banner-img.png'
+import bannerImg from '../../assets/images/img/summer-camp-banner-img.png'
 import TypingEffect from './TypingEffect';
 import { motion } from 'framer-motion';
 

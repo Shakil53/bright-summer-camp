@@ -3,9 +3,10 @@ import regImg from '../../assets/images/login/AlluraBackinTown.png';
 import regImg2 from '../../assets/images/login/newart.png';
 import SectionTitle from '../../components/shared/SectionTitle/SectionTitle';
 import Footer from '../../components/shared/Footer/Footer';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { useContext } from 'react';
 import { AuthContext } from '../../Providers/AuthProvider';
+import Swal from 'sweetalert2';
 
 
 
@@ -46,22 +47,37 @@ const tailFormItemLayout = {
     },
 };
 const Register = () => {
+    const navigate = useNavigate()
 
     const { createUser } = useContext(AuthContext);
+    // console.log(auth);
 
+    // console.log(createUser)
     const [form] = Form.useForm();
     const onFinish = (values) => {
-        // console.log('Received values of form: ', values);
+        console.log(values);
+        const { name, password, email } = values;
+        console.log(name, email, password)
 
-        createUser(form.email, form.confirm)
+        // console.log('Received values of form: ', values);
+        createUser(email, password)
             .then(result => {
                 const user = result.user;
-                // console.log(user);
+                console.log(user)
+                Swal.fire({
+                    position: 'top-end',
+                    icon: 'success',
+                    title: 'Register Successfully',
+                    showConfirmButton: false,
+                    timer: 1500
+                })
 
             })
             .catch(error => {
                 console.log(error)
             })
+        navigate('/login')
+
     };
     const prefixSelector = (
         <Form.Item name="countryCode" noStyle>
@@ -103,7 +119,7 @@ const Register = () => {
                         >
 
                             <Form.Item
-                                name="nickname"
+                                name="name"
                                 label="Nickname"
                                 tooltip="What do you want others to call you?"
                                 rules={[

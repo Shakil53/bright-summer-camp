@@ -19,13 +19,15 @@
     "match-sorter": "^6.3.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-photo-album": "^2.3.0",
     "react-pro-sidebar": "^1.1.0-alpha.1",
     "react-router-dom": "^6.16.0",
     "react-tabs": "^6.0.2",
     "react-type-animation": "^3.1.0",
     "react-typing-effect": "^2.0.5",
     "sort-by": "^1.2.0",
-    "styled-components": "^5.3.10"
+    "styled-components": "^5.3.10",
+    "sweetalert2": "^11.7.31"
   },
   "devDependencies": {
     "@types/react": "^18.2.15",
